@@ -5,8 +5,8 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int rows = 7;
-int columns = 7;
+int rows = 4;
+int columns = 4;
 
 int rowsLength = rows;
 int columnsLength = columns;
@@ -38,7 +38,6 @@ void FillArray(int [,] table)
             k++;
         }
         }
-       Console.WriteLine(k);
 
         for (int i = rowsMax-1; i < rowsMax; i++)
         {
@@ -51,13 +50,9 @@ void FillArray(int [,] table)
             }
         }    
             
-            Console.WriteLine(k);
-
-            Console.WriteLine(rowsMax);
-
-        for (int i = rowsMax-2; i < rowsMin; i++)
+        for (int i = rowsMax-2; i > rowsMin; i--)
     {
-        for (int j = 0; j < columnsMax-3; j++)
+        for (int j = 0; j < columnsMin; j++)
         {
             table[i,j] = (k);
             k++;
@@ -66,13 +61,7 @@ void FillArray(int [,] table)
 
 
 
-
-
-         //   table[2,0] = (k);
-         //   k++;
-    
-        
-        
+       
     for (int i = 1; i < rowsMin+1; i++)
     {
         for (int j = 0; j < columnsMax-1; j++)
@@ -93,15 +82,8 @@ void FillArray(int [,] table)
             }
         }
         
+}        
         
-        
-        /*
-            table[2,2] = (k);
-            k++;
-            table[2,1] = (k);
-*/
-} 
-
 
 FillArray(table);
 for (rows = 0; rows < rowsLength; rows++)
