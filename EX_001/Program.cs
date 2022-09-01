@@ -12,7 +12,7 @@
 int rows = 3;
 int columns = 4;
 int[,] arr = new int[rows, columns];
-//int[,] temporary = new int[0,0];
+int[,] temporary = new int[0,0];
 int[,] result = new int[rows, columns];
 int maxPosition01 = 0;
 int maxPosition02 = 0;
@@ -39,28 +39,52 @@ void PrintArray(int[,] array)
     } 
 }
 
-void SelectionSort(int[,] array)
-{
-    //for (int i = 0; i < rows; i++)
-     //{
+// void GetResult(int[,] arr)
+//    { for (int i = 0; i < rows; i++)
+//      {
              
-       // for (int j = 0; j < columns; j++)
-       //{
-       // result[i,j] = array[i,j];  }
-       
-    for (int i = 0; i < rows; i++)
+//       for (int j = 0; j < columns; j++)
+//       {
+//       result[i,j] = arr[i,j];  
+      
+//       }
+//      } 
+
+//    }
+
+void Replase(int[,] array)
+{    
+    for (int i = 0; i < 1; i++)
      {
-             
-        for (int j = 0; j < columns; j++)
+       for (int j = 0; j < columns; j++)
        {
-       
-            maxPosition01 = array[0,0];
-            result[0,0] = array[0,0];
-            if(array[0,1] > maxPosition01 && array[0,1] > array[0,2] && array[0,1] > array[0,3])
+            maxPosition01 = array[i,j];
+            for (int k = 1; k < 4; k++)
             {
-                maxPosition01 = array[0,1];
+                if(array[i,k] > array[0,2] && array[i,k] > array[0,3])   
+            {  maxPosition01 = array[i,k];
+               result[0,0] = array[i,k];
+            }
+            }
+            Console.ReadLine();
+            Console.WriteLine($"{maxPosition01}");
+       }   
+            //Console.WriteLine($"{maxPosition01}");
+            //Console.ReadLine();
+            //if(array[i,j] > maxPosition01 && array[i,j] > array[0,2] && array[i,j] > array[0,3])
+            //Console.WriteLine($"{maxPosition01}");
+            //result[i,j] = array[0,1];
+            //Console.WriteLine($"{array[i,j]}");
+       
+
+           /* if(array[0,1] > maxPosition01 && array[i,j] > array[0,2] && array[i,j] > array[0,3])
+            {
+                maxPosition01 = array[i,j];
                 result[0,0] = array[0,1];}
-                if(array[0,2] > maxPosition01 && array[0,2] > array[0,3])
+                //Console.WriteLine($"{maxPosition01}");
+       }  
+     }            
+/*                if(array[0,2] > maxPosition01 && array[0,2] > array[0,3])
             {   maxPosition01 = array[0,2];
                 result[0,0] = array[0,2];
 
@@ -124,19 +148,19 @@ void SelectionSort(int[,] array)
             }   
             }
        }
-
-            
+           
             Console.WriteLine(maxPosition01);
             Console.WriteLine(maxPosition02);
-            Console.WriteLine(maxPosition03);
+            Console.WriteLine(maxPosition03);   */
 
+     
      }
-
-       
+}
 
 GetArray(rows, columns);        
 PrintArray(arr);
-SelectionSort(arr);
+//GetResult(arr);
+Replase(arr);
 PrintArray(result);
 
 
