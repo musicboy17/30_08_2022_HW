@@ -10,6 +10,9 @@
 int i = 2;
 int j = 2;
 int k = 2;
+int l = 0;
+int m = 0;
+int [,] mult = new int[l,m];
 int [,] matrixFirst = new int[i,j];
 int [,] matrixSecond = new int[j,k];
 int [,] array = new int[0,0];
@@ -46,7 +49,7 @@ FillMatrixSecond(matrixSecond);
 
 void printMatF(int[,] matrixFirst)
 {
-//for (rows = 0; rows < rowsLength; rows++)
+
 {
     for (int i = 0; i < matrixFirst.GetLength(0); i++)
     {
@@ -58,14 +61,6 @@ void printMatF(int[,] matrixFirst)
 
 
 
-    // for (columns = 0; columns  < columnsLength; columns++)
-    // {
-    //     for (deep = 0; deep < deepLength; deep++)
-    //     {
-    //         Console.Write($"{array[rows, columns, deep]} {"("} {rows}{","}{columns}{","}{deep} {")"}{"\t"}");
-    //     }
-        
-    // }
     Console.WriteLine();
         }
     }
@@ -73,7 +68,6 @@ void printMatF(int[,] matrixFirst)
 
 void printMatS(int[,] matrixSecond)
 {
-//for (rows = 0; rows < rowsLength; rows++)
 {
     for (int j = 0; j < matrixSecond.GetLength(0); j++)
     {
@@ -83,20 +77,43 @@ void printMatS(int[,] matrixSecond)
 
         }
 
-
-
-    // for (columns = 0; columns  < columnsLength; columns++)
-    // {
-    //     for (deep = 0; deep < deepLength; deep++)
-    //     {
-    //         Console.Write($"{array[rows, columns, deep]} {"("} {rows}{","}{columns}{","}{deep} {")"}{"\t"}");
-    //     }
-        
-    // }
     Console.WriteLine();
         }
     }
 }
+
+void multiplication(int[,] mult)
+{
+
+int[,] mult01 = new int[matrixFirst.GetLength(0), matrixSecond.GetLength(1)];
+
+for (i = 0; i < matrixFirst.GetLength(0); ++i)
+{
+                for (j = 0; j < matrixSecond.GetLength(0); ++j)
+ {                   for (k = 0; k < matrixSecond.GetLength(1); ++k)
+ {
+                        mult[i, k] += matrixSecond[i, j] * matrixSecond[j, k];
+ }
+ }
+} }
+
+void Test1()
+        {
+            int[,] matrixFirst = { { 2, 4}, { 3, 2 } };
+            int[,] matrixSecond = { { 3, 4}, {3, 3 } };
+ 
+            int[,] m = multiplication(int [,];  mult);
+ 
+            for (i = 0; i < matrixFirst.GetLength(0); ++i)
+            {
+                for (j = 0; j < matrixSecond.GetLength(1); ++j)
+                {
+                    Console.Write(mult[i, k] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
 
 
 printMatF(matrixFirst);
@@ -104,3 +121,5 @@ printMatF(matrixFirst);
 Console.WriteLine();
 
 printMatS(matrixSecond);
+
+multiplication(matrixFirst);
